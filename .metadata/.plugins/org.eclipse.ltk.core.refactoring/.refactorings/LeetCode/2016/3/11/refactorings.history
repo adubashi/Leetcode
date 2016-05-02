@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ArrayProblems.findMedianOfTwoSortedArrays&apos; to &apos;findMedianOfTwoSortedArrays4&apos;&#x0D;&#x0A;- Original project: &apos;LeetCode&apos;&#x0D;&#x0A;- Original element: &apos;ArrayProblems.findMedianOfTwoSortedArrays&apos;&#x0D;&#x0A;- Renamed element: &apos;ArrayProblems.findMedianOfTwoSortedArrays4&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;findMedianOfTwoSortedArrays&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ArrayProblems{findMedianOfTwoSortedArrays.java[findMedianOfTwoSortedArrays" matchStrategy="1" name="findMedianOfTwoSortedArrays4" qualified="false" references="true" similarDeclarations="false" stamp="1457404306331" textual="false" version="1.0"/>
+</session>
