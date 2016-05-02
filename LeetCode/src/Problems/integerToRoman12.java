@@ -6,38 +6,25 @@ public class integerToRoman12 {
 	
 	public static void main(String args[]){
 		
-		System.out.println(integerToRoman(4));
-		System.out.println(integerToRoman(40));
+		//System.out.println(integerToRoman(4));
+		System.out.println(integerToRoman(400));
 
 	}
-	public static String integerToRoman(int number) {
+	public static String integerToRoman(int num) {
 		
-		HashMap<Integer,String> map = new HashMap<Integer,String>();
-		map.put(1000, "M");
-		map.put(900, "CM");
-		map.put(500, "D");
-		map.put(400, "CD");
-		map.put(100, "C");
-		map.put(90, "XC");
-		map.put(50,"L");
-        map.put(40,"XL");
-        map.put(10,"X");
-        map.put(9,"IX");
-        map.put(5,"V");
-        map.put(4,"IV");
-        map.put(1,"I");
-        
-        int[] keys = {100,900,500,400,100,90,50,40,10,9,5,4,1};
-        StringBuilder result = new StringBuilder();
-        for(int i = 0; i< keys.length; i++){
-        	while(number >= keys[i]){
-        		number = number - keys[i];
-        		result.append(map.get(keys[i]));
-        	}
+		String[] dict = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+        int[] val = {1000,900,500,400,100,90,50,40,10,9,5,4,1};  
+        StringBuilder ret = new StringBuilder();
+        for(int i=0; i<13; i++) {
+            if(num>=val[i]) {
+                int count = num/val[i];
+                num %= val[i];
+                for(int j=0; j<count; j++) {
+                    ret.append(dict[i]);
+                }
+            }
         }
-		
-		
-		return result.toString();
+        return ret.toString();
     }
 	
 	public static int charToInt(char c){
