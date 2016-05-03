@@ -8,7 +8,10 @@ public class palindromeNumber9 {
 	
 	//Check each end against each other
 	public static boolean isPalindrome(int x){
-		//Assume all negatives and 0 is not a palindrome
+		if(x == 0){
+			return true;
+		}
+		//Assume all negatives is not a palindrome
 		if(x <= 0){
 			return false;
 		}
