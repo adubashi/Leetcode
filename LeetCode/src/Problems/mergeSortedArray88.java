@@ -13,7 +13,22 @@ public class mergeSortedArray88 {
 	 */
 	
 	public void merge(int[] nums1, int m, int[] nums2, int n) {
-		int totalSpace = m + n;
+		int totalSpace = m + n - 1;
+		int indexA = m - 1;
+		int indexB = n - 1;
+		
+		while(indexB >= 0){
+			if(indexA >= 0 && nums1[indexA] > nums2[indexB] ){
+				nums1[totalSpace] = nums1[indexA];
+				indexA--;
+			} else {
+				nums2[totalSpace] = nums2[indexB];
+				indexB--;
+			}
+			totalSpace--;
+		}
+		
+		
         
     }
 
