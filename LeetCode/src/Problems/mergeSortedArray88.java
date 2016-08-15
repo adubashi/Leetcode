@@ -11,6 +11,7 @@ public class mergeSortedArray88 {
 	to hold additional elements from nums2. 
 	The number of elements initialized in nums1 and nums2 are m and n respectively.
 	 */
+	//Bloomberg
 	
 	public void merge(int[] nums1, int m, int[] nums2, int n) {
 		int totalSpace = m + n - 1;
@@ -18,15 +19,17 @@ public class mergeSortedArray88 {
 		int indexB = n - 1;
 		
 		while(indexB >= 0){
-			if(indexA >= 0 && nums1[indexA] > nums2[indexB] ){
-				nums1[totalSpace] = nums1[indexA];
-				indexA--;
+			if(indexA >= 0 && nums1[indexA] > nums2[indexB]){
+			   nums1[totalSpace] = nums1[indexA];
+			   indexA--;
+			   totalSpace--;
 			} else {
-				nums2[totalSpace] = nums2[indexB];
+				nums1[totalSpace] = nums2[indexB];
 				indexB--;
+				totalSpace--;
 			}
-			totalSpace--;
 		}
+		
 		
 		
         
