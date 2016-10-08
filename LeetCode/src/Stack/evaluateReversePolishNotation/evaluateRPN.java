@@ -1,6 +1,6 @@
 package Stack.evaluateReversePolishNotation;
 
-import java.util.Stack;
+import java.util.*;
 
 public class evaluateRPN {
 	
