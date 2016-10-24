@@ -1,0 +1,29 @@
+package Bloomberg.powerOfaNumber50;
+
+public class powerOfaNumber50 {
+	
+	public static void main(String args[]){
+		
+	}
+	
+	
+	
+	public static double myPow(double x, int n){
+		if(n == 0){
+			return 1;
+		} else {
+			return x * myPow(x, n-1);
+		}
+	}
+	
+	public static double myPowFast(double x, int n){
+		if(n == 0){
+			return 1;
+		} else if(n % 2 == 0){
+			return myPow(x,n/2) * myPow(x, n/2);
+		} else {
+			return x *  x * myPow(x,n/2);
+		}
+	}
+
+}

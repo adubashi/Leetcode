@@ -1,0 +1,11 @@
+package Bloomberg.powerOfaNumber50;
+
+public class powerOfaNumber50 {
+	
+	
+	
+	public static double myPow(double x, int n){
+		
+	}
+
+}

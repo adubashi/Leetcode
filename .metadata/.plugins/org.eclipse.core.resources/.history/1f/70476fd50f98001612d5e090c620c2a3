@@ -1,0 +1,12 @@
+package Bloomberg.removeDuplicatesFromSortedArray26;
+
+public class removeDuplicatesFromSortedArray26 {
+	
+	public static int removeDuplicatesNaive(int[] A) {
+		int j = 0;
+		int i = 1;
+		
+		
+	}
+
+}
