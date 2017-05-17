@@ -1,0 +1,45 @@
+
+public class Problem45 {
+	
+	
+	public static double nthterm(int n, double x){
+		
+		
+		double tophalf = Math.pow(x, Math.pow(2, n));
+		
+		double bottomhalf =  1 - Math.pow(x, Math.pow(2, n+1));
+		
+		return tophalf/bottomhalf;
+	}
+	
+	public static void main(String args[]){
+		
+		double x = 0.5;
+		
+		double sum = 0;
+		for(int n = 0; n <= 100; n++){
+			double result = nthterm(n,x);
+			sum = sum + result;
+			
+			System.out.println(n + " : " + result);
+			
+		}
+		
+		System.out.println("sum "  + sum);
+	}
+	
+	public static double calculateSum(double x){
+		double sum = 0;
+		for(int n = 0; n <= 100; n++){
+			double result = nthterm(n,x);
+			sum = sum + result;
+			
+			//System.out.println(n + " : " + result);
+			
+		}
+		
+		return sum;
+		
+	}
+
+}

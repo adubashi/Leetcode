@@ -1,0 +1,25 @@
+package LinkedLists.reverseLinkedList206;
+
+import LinkedLists.ListNode;
+
+public class reverseLinkedList206 {
+	
+	public static ListNode reverseList(ListNode head) {
+		
+		ListNode cur = head;
+		ListNode next = null;
+		ListNode prev= null;
+		
+		//Prev keeps track of previous node
+		
+		while(cur != null){
+			next = cur.next;
+			cur.next = prev;
+			prev = cur;
+			cur = next;
+		}
+		
+		
+	}
+
+}

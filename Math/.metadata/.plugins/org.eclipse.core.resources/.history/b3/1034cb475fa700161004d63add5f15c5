@@ -1,0 +1,32 @@
+
+public class Problem44 {
+	
+	
+	public static void main(String args[]){
+		
+		System.out.println("10 " + recur(1));
+		System.out.println(recur(2));
+		System.out.println(recur(3));
+		System.out.println(recur(4));
+		System.out.println(recur(5));
+		System.out.println(recur(6));
+		System.out.println(recur(7));
+		System.out.println(recur(8));
+		System.out.println(recur(9));
+		System.out.println(recur(10));
+		
+		
+		
+		
+	}
+	
+	
+	
+	public static int recur(int n){
+		if( n <= 1){
+			return 2;
+		} 
+		return 3 *recur(n-1) + 1;
+	}
+
+}

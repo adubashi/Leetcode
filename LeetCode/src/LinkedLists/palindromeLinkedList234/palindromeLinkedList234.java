@@ -29,7 +29,30 @@ public class palindromeLinkedList234 {
 			slow = slow.next;
 		}
 		return true;
+	}
+	
+	public static boolean isPalindromeSimple(ListNode head){
+		if(head == null || head.next == null){
+			return true;
+		}
 		
+		
+		ListNode cur = head;
+		Stack<Integer> stk = new Stack<Integer>();
+		
+		while(cur != null){
+			stk.push(cur.val);
+			cur = cur.next;
+		}
+		
+		cur = head;
+		while(cur != null){
+			if(cur.val != stk.pop()){
+				return false;
+			}
+			cur = cur.next;
+		}
+		return true;
 	}
 
 }

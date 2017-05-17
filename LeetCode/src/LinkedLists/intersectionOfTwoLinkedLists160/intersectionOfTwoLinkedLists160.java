@@ -1,8 +1,26 @@
 package LinkedLists.intersectionOfTwoLinkedLists160;
 
 import LinkedLists.ListNode;
+import java.util.HashSet;
 
 public class intersectionOfTwoLinkedLists160 {
+	
+	public static ListNode getIntersectionNodeSet(ListNode headA, ListNode headB){
+		HashSet<ListNode> set = new HashSet<>();
+		
+		while(headA != null){
+			set.add(headA);
+			headA = headA.next;
+		}
+		
+		while(headB != null){
+			if(set.contains(headB)){
+				return headB;
+			}
+			headB = headB.next;
+		}
+		return null;
+	}
 	
 	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 		ListNode list1node = null;
@@ -12,11 +30,10 @@ public class intersectionOfTwoLinkedLists160 {
 		
 		int lengthDifference = 0;
 		
-		//Set the length difference to the right node 
-		if(firstLength >= secondLength){
-		   lengthDifference = firstLength - secondLength;
-		   list1node = headA;
-		   list2node = headB;
+		if(firstLength > secondLength){
+			lengthDifference = firstLength - secondLength;
+			list1node = headA;
+			list2node = headB;
 		} else {
 			lengthDifference = secondLength - firstLength;
 			list1node = headB;
@@ -27,14 +44,17 @@ public class intersectionOfTwoLinkedLists160 {
 			list1node = list1node.next;
 			lengthDifference--;
 		}
-		while(list1node != null){
+		
+		while(list1node != null && list2node != null){
 			if(list1node == list2node){
 				return list1node;
-			}
+			} 
 			list1node = list1node.next;
 			list2node = list2node.next;
 		}
 		return null;
+		
+		
 	}
 	
 	

@@ -1,0 +1,12 @@
+
+public class Problem44 {
+	
+	
+	
+	public static int recur(int n){
+		if( n <= 1){
+			return 2;
+		}
+	}
+
+}

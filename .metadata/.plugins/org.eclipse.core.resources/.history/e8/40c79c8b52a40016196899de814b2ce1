@@ -1,0 +1,150 @@
+package LinkedLists.swapNodesInPairs24;
+
+import java.util.List;
+import java.util.Queue;
+
+import LinkedLists.ListNode;
+
+public class swapNodesInPairs24 {
+	
+	
+	public static void printList(ListNode n){
+		
+		while(n != null){
+			System.out.print(n.val + " ->");
+			n = n.next;
+		}
+		System.out.print("null");
+	}
+	
+	public static void main(String args[]){
+		
+		ListNode n1 = new ListNode(1);
+		ListNode n2 = new ListNode(2);
+		ListNode n3 = new ListNode(3);
+		ListNode n4 = new ListNode(4);
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = null;
+		
+		printList(n1);
+		ListNode result = swapNodes(n1);
+		System.out.println();
+		printList(result);
+		
+		Queue<List<Integer>> queue = new LinkedList<ArrayList<Integer>>();		
+	}
+	
+	public static ListNode swapPairs(ListNode head){
+		
+		//Edge case 
+		if(head == null || head.next == null){
+			return head;
+		}
+		//Add a dummy node to the front to return the list
+		ListNode dummy = new ListNode(0);
+		dummy.next = head;
+		ListNode current = dummy.next;
+		return dummy.next;
+		
+	}
+	
+	/*
+	Ways to Solve this problem:
+	1.--> swap the data between the two twos
+		iterate through the linked list, calling swap(Node p, Node q), on the two nodes
+		functions:
+		swapData(Node head) --> swaps two consecutive nodes
+		swap(Node p, Node q) --> swaps the data between two linked list nodes
+		
+		Edge Case(No Pair): if head == null or head.next == null return head 
+	
+	2. Recursive solution:
+	   Base case: If the head==null || head.next == null
+	   
+	   Get the remaining nodes: then do processing on the first two nodes.
+	   remaining = head.next.next;
+	   
+	   Get the first two nodes(and disconnect them from the original list).
+	   head, head.next;
+	   
+	   Node h2 = head.next;
+	   h2.next = head;
+	   
+	   Example:
+	   1 ----> 2 
+	   | 	   |
+	   |  	   |
+	  -----------
+	  
+	  head.next = recurse(head.next.next);
+		
+	*/
+	
+	// 1 swap the data between the two lists
+	//Swap the data between the two lists
+	public static ListNode swapData(ListNode head){
+		//Edge case 
+		if(head == null || head.next == null){
+			return head;
+		}
+		
+		ListNode current = head;
+		while(current != null && current.next != null){
+			swapDataBetweenLists(current,current.next);
+			current = current.next;
+		}
+		
+		return head;
+	}
+	
+	//Swap the data between two list nodes
+	public static void swapDataBetweenLists(ListNode p, ListNode q){
+		int val = p.val;
+		p.val = q.val;
+		q.val = val;
+	}
+	
+	//2 Swap the node connections but then do it recursively.
+	
+	public static ListNode swapNodes(ListNode head){
+		if(head == null || head.next == null){
+			return head;
+		}
+		
+		//Remaining nodes to process 
+		ListNode remaining  = head.next.next;
+		
+		//Head of modified list
+		ListNode newHead = head.next;
+		
+		//Make the two nodes loop together
+		ListNode nodeToProcess = head.next;
+		nodeToProcess.next = head;
+		
+		head.next = swapNodes(remaining);
+		
+		return newHead;
+	}
+	
+	
+	/*
+	 * 3
+	 * 
+	 */
+	public static ListNode swapPairs2(ListNode head){
+		
+		//Edge case 
+		if(head == null || head.next == null){
+			return head;
+		}
+		//Add a dummy node to the front to return the list
+		ListNode dummy = new ListNode(0);
+		dummy.next = head;
+		ListNode current = dummy.next;
+		return dummy.next;
+		
+	}
+
+}

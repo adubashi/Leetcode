@@ -1,0 +1,23 @@
+
+public class Problem45 {
+	
+	
+	public static double nthterm(int n, double x){
+		
+		
+		double tophalf = Math.pow(x, Math.pow(2, n));
+		
+		double bottomhalf =  1 - Math.pow(x, Math.pow(2, n+1));
+		
+		return tophalf/bottomhalf;
+	}
+	
+	public static void main(String args[]){
+		
+		
+		for(int i = 0; i < 10; i++){
+			
+		}
+	}
+
+}

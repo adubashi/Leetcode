@@ -1,0 +1,12 @@
+
+public class Problem46 {
+	
+	public static double nthTerm(int n){
+		return 1/(Math.pow(n,2) + 2*n);
+	}
+	
+	public static summation(int k){
+		
+	}
+
+}

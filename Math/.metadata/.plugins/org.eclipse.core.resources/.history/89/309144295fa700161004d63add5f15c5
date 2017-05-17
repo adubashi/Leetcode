@@ -1,0 +1,22 @@
+
+public class Problem44 {
+	
+	
+	public static void main(String args[]){
+		
+		System.out.println(recur(1));
+		
+		
+		
+	}
+	
+	
+	
+	public static int recur(int n){
+		if( n <= 1){
+			return 2;
+		} 
+		return 3 *recur(n-1) + 1;
+	}
+
+}

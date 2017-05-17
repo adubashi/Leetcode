@@ -1,0 +1,13 @@
+
+public class Problem45 {
+	
+	
+	public static double nthterm(int n, double x){
+		
+		
+		double half = Math.pow(x, Math.pow(2, n));
+		
+		double half = Math.pow(x, Math.pow(2, n+1));
+	}
+
+}

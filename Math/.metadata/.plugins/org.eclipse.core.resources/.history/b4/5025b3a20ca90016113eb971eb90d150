@@ -1,0 +1,9 @@
+
+public class Problem45 {
+	
+	
+	public static double nthterm(int n){
+		
+	}
+
+}

@@ -1,0 +1,56 @@
+
+public class Problem44 {
+	
+	
+	public static void main(String args[]){
+		
+		System.out.println("1 " + recur(1));
+		System.out.println("2 " + recur(2));
+		System.out.println("3 " + recur(3));
+		System.out.println("4 " + recur(4));
+		System.out.println("5 " + recur(5));
+		System.out.println("6 " + recur(6));
+		System.out.println("7 " + recur(7));
+		System.out.println("8 " + recur(8));
+		System.out.println("9 " + recur(9));
+		System.out.println("10 " + recur(10));
+		
+		System.out.println("1 " + nonRecur(1));
+		System.out.println("2 " + nonRecur(2));
+		System.out.println("3 " + nonRecur(3));
+		System.out.println("4 " + nonRecur(4));
+		System.out.println("5 " + nonRecur(5));
+		System.out.println("6 " + nonRecur(6));
+		System.out.println("7 " + nonRecur(7));
+		System.out.println("8 " + nonRecur(8));
+		System.out.println("9 " + nonRecur(9));
+		System.out.println("10 " + nonRecur(10));
+		
+		
+		
+		
+	}
+	
+	
+	
+	public static int recur(int n){
+		if( n <= 1){
+			return 2;
+		} 
+		return 3 *recur(n-1) + 1;
+	}
+
+	
+	public static double nonRecur(int n){
+		return Math.pow(3,n-1) + Math.pow(3, n-2) + 1;
+	}
+	
+	public static double explicitFormula(int n){
+		double base = Math.pow(3, n-1) * 2;
+		n--;
+		
+		while( n >= 0){
+			
+		}
+	}
+}
