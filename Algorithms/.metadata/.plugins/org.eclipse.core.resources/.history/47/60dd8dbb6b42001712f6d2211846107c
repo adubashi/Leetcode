@@ -1,0 +1,9 @@
+
+public class KMP {
+	
+	private String pat;
+	private int[][] dfa;
+	
+	
+
+}

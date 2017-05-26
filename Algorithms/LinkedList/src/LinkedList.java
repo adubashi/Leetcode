@@ -7,5 +7,12 @@ public class LinkedList {
 		Insert a node based on a property 
 	 */
 	
+	private Node head;
+	
+	public LinkedList(){
+		head = null;
+	}
+	
+	
 
 }

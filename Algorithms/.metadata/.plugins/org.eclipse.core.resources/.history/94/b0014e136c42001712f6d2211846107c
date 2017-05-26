@@ -1,0 +1,18 @@
+
+public class KMP {
+	
+	private String pat;
+	private int[][] dfa;
+	
+	public KMP(String pat){
+		this.pat = pat;
+		int M = pat.length();
+		//Extended ASCII set
+		int R = 256;
+		
+		dfa = new int[R][M];
+		// Initialize the dfa;
+		
+	}
+
+}

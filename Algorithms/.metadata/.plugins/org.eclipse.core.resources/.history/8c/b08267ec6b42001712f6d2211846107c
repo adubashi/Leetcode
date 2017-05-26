@@ -1,0 +1,13 @@
+
+public class KMP {
+	
+	private String pat;
+	private int[][] dfa;
+	
+	public KMP(String pat){
+		this.pat = pat;
+		int M = pat.length();
+		int R = 256;
+	}
+
+}

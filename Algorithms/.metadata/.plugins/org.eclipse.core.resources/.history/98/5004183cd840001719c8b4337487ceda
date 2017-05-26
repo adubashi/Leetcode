@@ -1,0 +1,13 @@
+
+public class LinkedList {
+	/*
+	 *  List Insert onto the head of the list
+		Delete a node from a list, based on the key
+        Search for a node in the list 
+		Insert a node based on a property 
+	 */
+	
+	private Node head;
+	
+
+}
