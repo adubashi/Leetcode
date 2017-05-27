@@ -28,7 +28,7 @@ public class KMP {
 	}
 		
 	  
-	public int search(String txt){
+	  public int search(String txt){
           int M = pat.length();
           int N = txt.length();
           int i = 0;
@@ -42,10 +42,9 @@ public class KMP {
         	  System.out.println("Found");
         	  return i - M;
           } else {
-        	  System.out.println("Not Found");
-        	  return N;
+        	  
           }
-          
-
+	  }
 	}
+
 }

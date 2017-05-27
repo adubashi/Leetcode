@@ -1,0 +1,13 @@
+
+public class BoyerMoore {
+	private int[] right;
+	private String pattern;
+	
+	
+	
+	public BoyerMoore(String pat){
+		this.pattern = pat;
+		int M = pat.length();
+	}
+
+}

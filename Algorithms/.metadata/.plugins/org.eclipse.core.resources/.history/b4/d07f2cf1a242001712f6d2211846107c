@@ -1,0 +1,10 @@
+
+public class BoyerMoore {
+	private int[] right;
+	private String pattern;
+	
+	
+	
+	
+
+}

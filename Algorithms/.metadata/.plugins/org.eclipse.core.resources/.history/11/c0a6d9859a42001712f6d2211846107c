@@ -24,28 +24,7 @@ public class KMP {
 			 
 			 //Update Restart state
 			 X = dfa[pat.charAt(j)][X];
-	  }
+		}
 	}
-		
-	  
-	public int search(String txt){
-          int M = pat.length();
-          int N = txt.length();
-          int i = 0;
-          int j = 0;
-          
-          for(i = 0, j = 0; i < N && j < M; i++ ){
-        	  j = this.dfa[txt.charAt(i)][j];
-          }
-          
-          if(j == M){
-        	  System.out.println("Found");
-        	  return i - M;
-          } else {
-        	  System.out.println("Not Found");
-        	  return N;
-          }
-          
 
-	}
 }
