@@ -1,0 +1,8 @@
+
+public class RabinKarp {
+	
+	private long hash(String key, int M){
+		
+	}
+
+}

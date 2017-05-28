@@ -1,0 +1,34 @@
+
+public class RabinKarp {
+	
+	private String pat;
+	private long patHash;
+	private int M;
+	private long Q;
+	//Alphabet size
+	private int R = 256;
+	private long RM;          // R^(M-1) % Q         
+	
+	public RabinKarp(String pat){
+		 this.pat = pat;        // save pattern (only needed for Las Vegas)      
+		 this.M = pat.length();    
+		 //Random prime
+		 Q = 997;
+		 RM = 1;
+		 for(int i = 1;  i <= M - 1; i++){
+			 RM =  (R * RM) % Q; 
+		 }
+		 
+		 
+	}
+	
+	private long hash(String key, int M){
+		long h = 0;
+		for(int i = 0; i < M; i++){
+			h = (R * h + key.charAt(i)) % M;
+		}
+	
+		return h;
+	}
+
+}
