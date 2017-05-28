@@ -37,17 +37,11 @@ public class BoyerMoore {
 					if(skip < 1){
 						skip = 1;
 					}
-					//If we have a mismatch break out
 					break;
-				}
-				if(skip == 0){
-					return i;
+					
 				}
 			}
-			
 		}
-		//Pattern not found;
-		return N;
 	}
 
 }

@@ -28,26 +28,8 @@ public class BoyerMoore {
 		
 		for(int i = 0; i <= N-M; i++){
 			//Check the skip position
-			skip = 0;
-			for(int j = M-1; j >= 0; j--){
-				//We have a mismatch
-				if(txt.charAt(i+j) != pattern.charAt(j)){
-					skip = j - right[txt.charAt(i+j)];
-					
-					if(skip < 1){
-						skip = 1;
-					}
-					//If we have a mismatch break out
-					break;
-				}
-				if(skip == 0){
-					return i;
-				}
-			}
 			
 		}
-		//Pattern not found;
-		return N;
 	}
 
 }

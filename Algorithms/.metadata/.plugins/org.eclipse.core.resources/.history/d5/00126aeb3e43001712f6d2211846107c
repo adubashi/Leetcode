@@ -39,15 +39,10 @@ public class BoyerMoore {
 					}
 					//If we have a mismatch break out
 					break;
-				}
-				if(skip == 0){
-					return i;
+					
 				}
 			}
-			
 		}
-		//Pattern not found;
-		return N;
 	}
 
 }

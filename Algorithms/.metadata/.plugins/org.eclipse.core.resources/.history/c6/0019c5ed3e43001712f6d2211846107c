@@ -41,13 +41,10 @@ public class BoyerMoore {
 					break;
 				}
 				if(skip == 0){
-					return i;
+					return 1;
 				}
 			}
-			
 		}
-		//Pattern not found;
-		return N;
 	}
 
 }

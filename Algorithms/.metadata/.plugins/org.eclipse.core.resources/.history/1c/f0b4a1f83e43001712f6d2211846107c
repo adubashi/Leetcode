@@ -44,10 +44,7 @@ public class BoyerMoore {
 					return i;
 				}
 			}
-			
 		}
-		//Pattern not found;
-		return N;
 	}
 
 }

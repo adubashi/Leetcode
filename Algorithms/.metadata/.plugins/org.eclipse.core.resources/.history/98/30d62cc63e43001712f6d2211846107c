@@ -34,20 +34,13 @@ public class BoyerMoore {
 				if(txt.charAt(i+j) != pattern.charAt(j)){
 					skip = j - right[txt.charAt(i+j)];
 					
-					if(skip < 1){
+					if(skip > 0){
 						skip = 1;
 					}
-					//If we have a mismatch break out
-					break;
-				}
-				if(skip == 0){
-					return i;
+					
 				}
 			}
-			
 		}
-		//Pattern not found;
-		return N;
 	}
 
 }
