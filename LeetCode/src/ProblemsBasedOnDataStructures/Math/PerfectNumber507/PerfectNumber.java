@@ -14,25 +14,33 @@ public class PerfectNumber {
 		return sum == n;
 	}
 	
-
+	/*
+	 * Time complexity: O(root(n))
+	 * Space: O(1)
+	 * 
+	 */
 	public static boolean isPerfect2(int n){
 		
 		if(n == 1 || n == 0){
             return false;
-        }
-		int sum = 0;
+		}
+		int sum = 1;
 		
-		int squareRootInt = (int)Math.sqrt(n);
-		for(int i = 1; i <= squareRootInt; i++){
+		
+		for(int i = 2; i*i <= n; i++){
 			if(n % i == 0){
-				sum = sum + i + (n/i);
+				sum += i + (n/i);
+				
+
 			}
 		}
 		
-		return sum == (2 * n);
+		return sum == n;
 	}
 	
 	public static void main(String args[]){
+		System.out.println(isPerfect2(0));
+		System.out.println(isPerfect2(1));
 		System.out.println(isPerfect2(5));
 		System.out.println(isPerfect2(6));
 		System.out.println(isPerfect2(28));

@@ -1,4 +1,4 @@
-package Trees;
+package ProblemsBasedOnDataStructures.Trees;
 
 public class TreeNode {
 	public int val;
