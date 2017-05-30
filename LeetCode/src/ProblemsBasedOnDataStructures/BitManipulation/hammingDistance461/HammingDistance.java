@@ -8,9 +8,7 @@ public class HammingDistance {
 	// converting this binary string 
 	public static int hammingDistance(int a, int b){
 		int xor = a^b;
-		
 		System.out.println(xor);
-		
 		//Calculates hamming weight
 		String bString = Integer.toBinaryString(xor);
 		int differenceCount = 0;
@@ -45,14 +43,23 @@ public class HammingDistance {
 		int xor = a^b;
 		System.out.println(xor);
 		return hammingWeight(xor);
-		
+	}
+	
+	public static int hammingDistance3(int a, int b){
+		int count = 0;
+		for(int i = 1; i < 33; i++){
+			if(getBit(a,i) != getBit(b,i)){
+				count++;
+			}
+		}
+		return count;
 	}
 	
 	
+	
+	
 	public static void main(String args[]){
-		
-		System.out.println(hammingDistance2(3,1));
-		
+		System.out.println(hammingDistance3(1,4));
 	}
 
 }
