@@ -77,8 +77,7 @@ public class InvertBinaryTree {
 	public static TreeNode invertBTreeIterative(TreeNode head){
 		
 		//Queue
-		Queue<TreeNode> queue = new LinkedList<>();
-		
+		Queue<TreeNode> queue = new LinkedList<>();	
 		if(head == null){
 			return null;
 		}
@@ -100,11 +99,8 @@ public class InvertBinaryTree {
 			curNode.right = curNode.left;
 			curNode.left = right;		
 		}
-		
 		//Return head
-		return head;
-		
-		
+		return head;		
 	}
 	
 
