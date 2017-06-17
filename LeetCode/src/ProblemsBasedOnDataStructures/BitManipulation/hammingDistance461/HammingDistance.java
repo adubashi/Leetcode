@@ -54,6 +54,7 @@ public class HammingDistance {
 		}
 		return count;
 	}
+
 	
 	
 	
