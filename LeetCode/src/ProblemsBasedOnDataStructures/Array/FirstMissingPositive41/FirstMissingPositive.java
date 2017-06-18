@@ -59,12 +59,73 @@ public class FirstMissingPositive {
 		//Should never happen
 		return 0;	
 	}
+	/*
+	 * 
+	 * O(n) time
+	 * O(n) space - for copying the array 
+	 * 
+	 * Steps:
+	 * 1. Segregate the positive and negative integers
+	 * 2. Traverse the array that has positive numbers, if an integer is positive then change
+	 * it to negative
+	 * 
+	 * 
+	 */
 	
+	public static int separatePositiveAndNegativeIntegers(int[] nums, int size){
+		int numberOfNonPositives = 0;
+		int i = 0;
+		for(i = 0; i < size; i++){
+			if(nums[i] <= 0){
+			   swap(i,numberOfNonPositives,nums);
+			   numberOfNonPositives++;
+			}
+		}	
+		return numberOfNonPositives;
+	}
+	
+	public static void swap(int i, int j, int[] arr){
+		int elem = arr[i];
+		arr[i] = arr[j];
+		arr[j] = elem;
+	}
+	
+	//Find the missing positive integer in an array with all positives
+	public static int findMissingPositive(int[] arr, int size){
+		  int i;
+	      for(i = 0; i < size; i++)
+	      {
+	        if(Math.abs(arr[i]) - 1 < size && arr[Math.abs(arr[i]) - 1] > 0){
+	          arr[Math.abs(arr[i]) - 1] = -arr[Math.abs(arr[i]) - 1];
+	        }
+	      }
+	      
+	      // Return the first index value at which 
+	      // is positive
+	      for(i = 0; i < size; i++){
+	        if (arr[i] > 0){
+	          return i+1;  // 1 is added becuase indexes 
+	                       // start from 0
+	        }
+		  }
+	      return size+1;
+	}
+	
+	public static int findMissing(int[] arr, int size){
+			// First separate positive and 
+	       // negative numbers
+	       int shift = separatePositiveAndNegativeIntegers(arr, size);
+	       int[] arr2 = Arrays.copyOfRange(arr, shift, size);
+	       // Shift the array and call 
+	       // findMissingPositive for
+	       // positive part
+	       return findMissingPositive(arr2, size-shift);
+	}
+
 	public static void main(String args[]){
-		
-		int[] nums = {-1,0,2};
-		int res = firstMissingPositiveHash(nums);
-		
+		int[] nums = {-3,-2,-1,0,2};
+		int[] nums2 = {0,2,-3,-2,-1,};
+		System.out.println(findMissing(nums2, nums2.length));	
 	}
 
 }
