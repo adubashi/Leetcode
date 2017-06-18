@@ -39,7 +39,7 @@ public class FirstMissingPositive {
 		}
 		//Edge case: If we get to end of the array, the remaining missing positive is the
 		// last number + 1
-		return nums[nums.length - 1 ] + 1; 
+		return nums[nums.length - 1] + 1; 
     }
 	
 	//Using hash table
@@ -62,14 +62,13 @@ public class FirstMissingPositive {
 	/*
 	 * 
 	 * O(n) time
-	 * O(n) space - for copying the array 
+	 * O(n) space - for copying the array,but can be modified to use O(1) space,
+	 * array copying is not necessary it's just cleaner
 	 * 
 	 * Steps:
 	 * 1. Segregate the positive and negative integers
 	 * 2. Traverse the array that has positive numbers, if an integer is positive then change
 	 * it to negative
-	 * 
-	 * 
 	 */
 	
 	public static int separatePositiveAndNegativeIntegers(int[] nums, int size){
@@ -98,8 +97,7 @@ public class FirstMissingPositive {
 	        if(Math.abs(arr[i]) - 1 < size && arr[Math.abs(arr[i]) - 1] > 0){
 	          arr[Math.abs(arr[i]) - 1] = -arr[Math.abs(arr[i]) - 1];
 	        }
-	      }
-	      
+	      }     
 	      // Return the first index value at which 
 	      // is positive
 	      for(i = 0; i < size; i++){
@@ -120,6 +118,37 @@ public class FirstMissingPositive {
 	       // findMissingPositive for
 	       // positive part
 	       return findMissingPositive(arr2, size-shift);
+	}
+	
+	
+	public static int findMissingPositiveOptimal(int[] A){
+		if(A.length == 0){
+			return 1;
+		}
+		
+		int n = A.length;
+		int i = 0;
+		while(i < n){
+			boolean inRange = A[i] >= 1 && A[i] <= n;
+			boolean inWrongPlace = A[i] != i + 1;
+			boolean isNotARepeat = A[i] != A[A[i] - 1];
+			if(inRange && inWrongPlace && isNotARepeat){
+			  swap(i, A[i] - 1,A);
+			} else {
+				i++;
+			}
+		}
+		
+		//If an element is not in the correct place then return i+1, as that 
+		// is the missing element
+		for (i = 0; i < n; i++) {
+            if (A[i] != i + 1) {
+                return i + 1;
+            }
+        }
+		
+		
+		return A[A.length - 1 ] + 1;
 	}
 
 	public static void main(String args[]){
