@@ -122,33 +122,28 @@ public class FirstMissingPositive {
 	
 	
 	public static int findMissingPositiveOptimal(int[] A){
-		if(A.length == 0){
-			return 1;
-		}
-		
-		int n = A.length;
-		int i = 0;
-		while(i < n){
-			boolean inRange = A[i] >= 1 && A[i] <= n;
-			boolean inWrongPlace = A[i] != i + 1;
-			boolean isNotARepeat = A[i] != A[A[i] - 1];
-			if(inRange && inWrongPlace && isNotARepeat){
+		if (A.length == 0) {
+            return 1;
+        }
+        int i = 0;
+        while (i < A.length) {
+            
+            boolean inRange = A[i] >= 1 &&  A[i] <= A.length;
+            boolean inWrongPlace = A[i] != i+1;
+			if(inWrongPlace && inRange &&  A[i] != A[A[i] - 1]){
 			  swap(i, A[i] - 1,A);
 			} else {
 				i++;
 			}
-		}
-		
-		//If an element is not in the correct place then return i+1, as that 
-		// is the missing element
-		for (i = 0; i < n; i++) {
+        }
+         
+        for (i = 0; i < A.length; i++) {
             if (A[i] != i + 1) {
                 return i + 1;
             }
         }
-		
-		
-		return A[A.length - 1 ] + 1;
+         
+        return A[A.length - 1] + 1;
 	}
 
 	public static void main(String args[]){
