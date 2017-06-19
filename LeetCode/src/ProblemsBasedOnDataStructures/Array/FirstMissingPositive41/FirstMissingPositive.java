@@ -119,7 +119,12 @@ public class FirstMissingPositive {
 	       // positive part
 	       return findMissingPositive(arr2, size-shift);
 	}
-	
+	/*
+	 * 
+	 * Optimal Solution
+	 * O(n) time
+	 * O(1) space
+	 */
 	
 	public static int findMissingPositiveOptimal(int[] A){
 		if (A.length == 0) {
