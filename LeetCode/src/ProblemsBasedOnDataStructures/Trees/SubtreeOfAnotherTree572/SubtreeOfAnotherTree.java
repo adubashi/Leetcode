@@ -14,7 +14,11 @@ public class SubtreeOfAnotherTree {
 	 */
 	public static boolean isSubtree(TreeNode s, TreeNode t) {
 		
-		if(t == null){
+		
+		if(s == null && t == null){
+			return true;
+		}
+		if(t == null && s != null){
 			return true;
 		}
 		if(s == null){
