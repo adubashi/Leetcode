@@ -36,6 +36,22 @@ public class BinaryTreePaths {
     	
     }
     
+    public void dfs(TreeNode root, ArrayList<ArrayList<String>> list, ArrayList<String> curr){
+    	curr.add(root.val + "");
+    	
+    	if(root.left == null && root.right == null){
+    		list.add(curr);
+    		return;
+    	}
+    	
+    	if(root.left != null){
+    		dfs(root.left, list, new ArrayList<String>(curr) );
+    	}
+    	if(root.right != null){
+    		dfs(root.right, list, new ArrayList<String>(curr));
+    	}
+    }
+    
     
     
     
