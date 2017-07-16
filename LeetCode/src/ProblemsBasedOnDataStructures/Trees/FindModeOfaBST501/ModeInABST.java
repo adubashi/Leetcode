@@ -48,7 +48,8 @@ public class ModeInABST {
 					currentNode = currentNode.left;
 				}
 			}
-				
+		}
+		
 		}
 		
 		public static List<Integer> inorderTraversalList(TreeNode root){
@@ -81,7 +82,7 @@ public class ModeInABST {
 					
 			}
 			return list;
-	}
+		}
 	
 	
 
