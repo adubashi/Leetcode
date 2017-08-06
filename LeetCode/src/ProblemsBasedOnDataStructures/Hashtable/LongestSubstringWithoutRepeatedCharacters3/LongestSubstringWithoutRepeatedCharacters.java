@@ -136,32 +136,63 @@ public class LongestSubstringWithoutRepeatedCharacters {
 		}
 		return maxLength;
 	}
+	/*
+	 * int n = s.length();
+        int i = 0;
+        int j = 0;
+        int ans = 0;
+        int currentDistance = 0;
+        int maxLength = 0;
+        HashSet<Character> hashset = new HashSet<Character>();
+        
+        while( i < n && j < n){
+            
+            if(hashset.contains(s.charAt(j))){
+                hashset.remove(s.charAt(i));
+                i++;
+            } else {
+                hashset.add(s.charAt(j));
+                currentDistance = j - i  + 1;
+                if( currentDistance > maxLength){
+                    maxLength = currentDistance;
+                }
+                j++;
+            }
+        }
+        
+        return maxLength;
+	 */
+	
+	/*
+	 * 
+	 * Same principle as a hash table, but uses a sliding window with a hash of Characters to indices 
+	 * Use a for loop with i as the backindex and j as the frontindex
+	 * 
+	 * If a character is in the map, then move the current index to that point. 
+	 * 
+	 * 
+	 * 
+	 * Why do we put the character plus one past it's original position-> to make sure the 
+	 * pointer j does not move back from it's original position. Keep it moving forward.
+	 */
 	
 	
 	
 	public static int longestSubstringHashTable(String s){
-		int n = s.length(), maxLength = 0;
-        Map<Character, Integer> map = new HashMap<>(); // current index of character
-        // try to extend the range [i, j]
-        int backIndex = 0;
-        int frontIndex = 0;
-        while (frontIndex < n) {
-            Character frontChar = s.charAt(frontIndex);
-            if (map.containsKey(frontChar)) {
-                if(backIndex < map.get(frontChar)){
-                    backIndex = map.get(frontChar);
-                }
-            }
-
-            int curDistance = frontIndex - backIndex + 1;
-            if(maxLength < curDistance){
-                maxLength = curDistance;
-            }
-          
-            map.put(frontChar, frontIndex + 1);
-            frontIndex++;
-        }
-        return maxLength;
+		
+		int i = 0;
+		int j = 0;
+		int ans = 0;
+		HashMap<Character,Integer> hash = new HashMap<Character,Integer>();
+		for(j = 0; j < s.length(); j++){
+			if(hash.containsKey(s.charAt(j))){
+				i = Math.max(i, hash.get(s.charAt(j)));	
+			} 
+			ans = Math.max(ans, j - i + 1);	
+			hash.put(s.charAt(j), j+1);
+		}
+		
+		return ans;
 	}
 	
 	
