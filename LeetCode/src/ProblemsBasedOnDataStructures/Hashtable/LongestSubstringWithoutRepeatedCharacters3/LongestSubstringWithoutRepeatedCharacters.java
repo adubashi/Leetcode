@@ -1,6 +1,9 @@
-package Hashtable.LongestSubstringWithoutRepeatedCharacters3;
+package ProblemsBasedOnDataStructures.Hashtable.LongestSubstringWithoutRepeatedCharacters3;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Map;
 
 public class LongestSubstringWithoutRepeatedCharacters {
 
@@ -92,7 +95,6 @@ public class LongestSubstringWithoutRepeatedCharacters {
 					maxLen = curLen;
 				}
 				curLen = i - prev_index;
-
 			}
 			hashtable.put(curCharacter, i);
 		}
@@ -101,5 +103,92 @@ public class LongestSubstringWithoutRepeatedCharacters {
 		}
 		return maxLen;
 	}
+	
+	
+	public static int longestSubstringNoRepeatsHashset(String s){
+		
+		int backIndex, frontIndex;
+		backIndex = 0;
+		frontIndex = 0;
+		HashSet<Character> hashset = new HashSet<Character>();
+		int lengthOfString = s.length();
+		
+		int maxLength = 0;
+		int currentLength = 0;
+		
+		
+		while(backIndex < lengthOfString && frontIndex < lengthOfString){
+			Character backCharacter = s.charAt(backIndex);
+			Character frontCharacter = s.charAt(frontIndex);	
+			if(hashset.contains(frontCharacter)){
+				hashset.remove(backCharacter);
+				backIndex++;
+			} else {
+				hashset.add(frontCharacter);
+				frontIndex++;
+				
+				currentLength = frontIndex - backIndex;
+				if(currentLength > maxLength){
+					maxLength = currentLength;
+				}
+				
+			}			
+		}
+		return maxLength;
+	}
+	
+	
+	
+	public static int longestSubstringHashTable(String s){
+		int n = s.length(), maxLength = 0;
+        Map<Character, Integer> map = new HashMap<>(); // current index of character
+        // try to extend the range [i, j]
+        int backIndex = 0;
+        int frontIndex = 0;
+        while (frontIndex < n) {
+            Character frontChar = s.charAt(frontIndex);
+            if (map.containsKey(frontChar)) {
+                if(backIndex < map.get(frontChar)){
+                    backIndex = map.get(frontChar);
+                }
+            }
+
+            int curDistance = frontIndex - backIndex + 1;
+            if(maxLength < curDistance){
+                maxLength = curDistance;
+            }
+          
+            map.put(frontChar, frontIndex + 1);
+            frontIndex++;
+        }
+        return maxLength;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

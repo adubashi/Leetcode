@@ -1,4 +1,4 @@
-package Hashtable.TwoSum;
+package ProblemsBasedOnDataStructures.Hashtable.TwoSum;
 
 import java.util.*;
 
@@ -20,6 +20,19 @@ public class TwoSum1 {
 			}
 		}
 		return array;
+	}
+	
+	
+	public static boolean twoSum2(int[] array, int sum){
+		Hashtable<Integer,Integer> hash = new Hashtable<Integer,Integer>();
+		for(Integer elem : array){
+			if(hash.containsKey(elem)){
+				return true;
+			} else {
+				hash.put(sum-elem, elem);
+			}
+		}
+		return false;
 	}
 
 }

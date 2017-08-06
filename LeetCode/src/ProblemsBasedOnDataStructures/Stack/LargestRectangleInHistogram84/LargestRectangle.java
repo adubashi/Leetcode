@@ -4,9 +4,8 @@ import java.util.Stack;
 
 public class LargestRectangle {
 	
-	public static int largestRectangleArea(int[] heights) {
-		
-		//Stack that holds the heights 
+	public static int largestRectangleArea(int[] heights) {	
+				//Stack that holds the heights 
 				Stack<Integer> stk = new Stack<Integer>();
 				
 				int maxArea = 0;
@@ -29,10 +28,8 @@ public class LargestRectangle {
 					   if(maxArea < areaWithTop){
 						   maxArea = areaWithTop;
 					   }	   
-					}
-						
+					}		
 				}
-				
 				while(!stk.isEmpty()){
 					tp = stk.pop();
 					if(stk.isEmpty()){
@@ -43,8 +40,7 @@ public class LargestRectangle {
 					if(maxArea < areaWithTop ){
 						maxArea = areaWithTop;
 					}
-				}
-				
+				}	
 				return maxArea;   
     }
 
