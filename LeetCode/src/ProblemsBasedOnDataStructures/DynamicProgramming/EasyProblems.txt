@@ -1,7 +1,7 @@
 Range Sum Query - Immutable
 Paint Fence
-Maximum Subarray
+Maximum Subarray - done 
 Paint house
 House Robber
 Best Time to Buy and Sell Stock
-Climbing stairs
+Climbing stairs - done 
