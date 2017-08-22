@@ -88,6 +88,16 @@ public class UniquePaths {
 	    return success;
 	}    
 	
+	/*
+	 * 
+	 * Uses a matrix
+	 * 
+	 */
+	public static int uniquePathsDP(int m,int n) {
+		
+		
+		return 0;
+	}
 	
 	
 	
