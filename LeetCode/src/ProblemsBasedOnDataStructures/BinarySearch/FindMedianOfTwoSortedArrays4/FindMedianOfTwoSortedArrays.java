@@ -7,7 +7,7 @@ public class FindMedianOfTwoSortedArrays {
 		
 		
 		double[] array = {1,2,3};
-		double[] array2 = {4,5,6};
+		double[] array2 = {5,6};
 		
 		
 		double ans = findMedianSortedArraysLinear(array,array2);
