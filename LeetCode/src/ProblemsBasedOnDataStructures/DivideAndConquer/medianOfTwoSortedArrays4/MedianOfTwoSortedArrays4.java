@@ -1,4 +1,4 @@
-package DivideAndConquer.medianOfTwoSortedArrays4;
+package ProblemsBasedOnDataStructures.DivideAndConquer.medianOfTwoSortedArrays4;
 
 import java.util.Arrays;
 

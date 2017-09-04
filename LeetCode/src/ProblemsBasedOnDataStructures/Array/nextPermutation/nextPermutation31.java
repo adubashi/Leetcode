@@ -1,4 +1,4 @@
-package Array.nextPermutation;
+package ProblemsBasedOnDataStructures.Array.nextPermutation;
 
 public class nextPermutation31 {
 	public static void reverse(int[] nums, int left, int right){
