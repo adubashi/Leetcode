@@ -63,14 +63,13 @@ public class LongestValidParentheses {
 				stk.pop();
 				int currentLength = i  - stk.peek();
 				
+				//Update 
 				if(stk.isEmpty()) {
 					stk.push(i);
 				} else {
 					maxAns = Math.max(maxAns, currentLength);
-				}
-				
+				}	
 			}
-	
 		}
 		return maxAns;
 	}
