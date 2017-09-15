@@ -47,14 +47,14 @@ public class FindMinimumOfaRotatedSortedArray {
 		int mid = left + (right - left)/2; 
 		
 		
-		//is the minimum element mid
+		//is the minimum element mid+1
 		if(mid < right && array[mid+1] < array[mid]) {
-			return array[mid];
+			return array[mid+1];
 			
 		}
-		//is the minimum element mid+1;
+		//is the minimum element mid;
 		if(mid > left && array[mid] < array[mid-1]) {
-			return array[mid+1];
+			return array[mid];
 		}
 		
 		//Need to go to either the left or the right side;
