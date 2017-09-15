@@ -97,7 +97,7 @@ public class LargestRectangle {
    }
 	
 	
-	public  int maximalRectangleSecond(char[][] matrix) {
+	public int maximalRectangleSecond(char[][] matrix) {
 		
 		int R = matrix.length;
 		int D = R == 0 ? 0 : matrix[0].length;
