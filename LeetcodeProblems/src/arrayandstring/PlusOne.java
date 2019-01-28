@@ -11,13 +11,14 @@ public class PlusOne {
 		
 		int[] nums = {1,2,3};
 		int[] nums2 = {4,3,2,1};
+		int[] nums3 = {9};
 		
 		//Simple Solution:
 		System.out.println("Simple Solution:");
 		//Test Cases 1 
 		int[] expectedArray = {1,2,4};
 		System.out.println("Expected Result: " + Arrays.toString(expectedArray));
-		System.out.println("Actual Result:" + plusOne(nums));
+		System.out.println("Actual Result:" + Arrays.toString(plusOne(nums)));
 		
 		//Test Cases 1
 		//int[] expectedArray2 = {4,3,2,1};
@@ -39,29 +40,73 @@ public class PlusOne {
 	 * 
 	 */
 	public static int[] plusOne(int[] digits) {
-		List<Integer> list = new ArrayList<>();
-		
-		
+		//Convert to list 
+		List<Integer> intList = Arrays.stream(digits)
+			      .boxed()
+			      .collect(Collectors.toList());
+	    intList.add(0, 0);
+	    System.out.println(intList);
+	    
+	    digits = Arrays.copyOf(digits, digits.length + 1);
+	    
+	    for(int i = 0; i < digits.length; i++) {
+	    		digits[i] = intList.get(i);
+	    }
+	    
+	    System.out.println(Arrays.toString(digits));
+	    
 		int startIndex = digits.length - 1;
 		int carry = 0;
 		while(startIndex >= 0 || carry != 0) {
 			int number = digits[startIndex];
-			System.out.println(number);
+			System.out.println("number:" + number);
 			//Result 
 			int result = number + 1;
-			if(result % 10 == 1) {
+			System.out.println("result:" + result);
+			if(result > 9) {
 				carry = 1;
 				digits[startIndex] = result % 10;
 			} else {
 				digits[startIndex] = result;
 				carry = 0;
+				break;
 			}
 			startIndex--;
 		}
+        if(digits[0] == 0) {
+        		digits = Arrays.copyOfRange(digits, 1, digits.length);
+        		return digits;
+        } else {
+        		return digits;
+        }
+	}
+	
+	public static int[] plusOneEfficient(int[] digits) {
+		if(digits==null||digits.length==0) {
+	        return new int[0];
+		}
+	 
+	    int carry = 1;    
+	    for(int i=digits.length-1; i>=0; i--){
+	        int sum = digits[i]+carry;
+	        if(sum>=10){
+	            carry=1;
+	        }else{
+	            carry=0;
+	        }
+	        digits[i]=sum%10;
+	    }
+	 
+	    if(carry==1){
+	        int[] result = new int[digits.length+1];
+	        System.arraycopy(digits, 0, result, 1, digits.length);
+	        result[0]=1;
+	        return result;
+	    }else{
+	        //int[] result = new int[digits.length];
+	        return digits;
+	    }
 		
-		List<Integer> list2 = Arrays.stream(digits).boxed().collect(Collectors.toList());
-        System.out.println(Arrays.toString(digits));
-        return null;
 	}
 
 }
