@@ -29,20 +29,21 @@ public class ValidParentheses {
 	            } 
 			}
 		}
-		return true;
+		return myStack.isEmpty();
         
     }
 	
 	public static boolean isMatchingPair(char character1, char character2) 
     { 
-       if (character1 == '(' && character2 == ')') 
+       if (character1 == '(' && character2 == ')') {
          return true; 
-       else if (character1 == '{' && character2 == '}') 
+       } else if (character1 == '{' && character2 == '}') {
          return true; 
-       else if (character1 == '[' && character2 == ']') 
+       } else if (character1 == '[' && character2 == ']') {
          return true; 
-       else
+       } else {
          return false; 
+       }
     }
 
 }
