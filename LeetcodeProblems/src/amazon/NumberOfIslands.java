@@ -1,6 +1,7 @@
-package stackandqueue;
+package amazon;
 
 public class NumberOfIslands {
+	
 	
 	public int numIslands(char[][] grid) {
         int count = 0;
@@ -31,5 +32,6 @@ public class NumberOfIslands {
 	    dfs(i, j-1,grid);
 	    dfs(i, j+1,grid);
 	}
+	
 
 }

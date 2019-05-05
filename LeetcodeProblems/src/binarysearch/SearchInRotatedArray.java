@@ -99,9 +99,7 @@ public class SearchInRotatedArray {
     	  	return search(arr, mid+1, right, key);
       } else {
     	  	return search(arr, left, mid-1, key);
-      }
-	  
-	  
+      }  
   }
 
 }

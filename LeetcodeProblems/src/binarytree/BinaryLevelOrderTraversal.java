@@ -25,7 +25,11 @@ public class BinaryLevelOrderTraversal {
 	 * - Dequeue a node from q and assign it’s value to temp_node
 	 */
 	public static List<List<Integer>> levelOrder(TreeNode root) {
+		
 		List<List<Integer>> result = new ArrayList<>();
+		if(root == null) {
+			return result;
+		}
 	    Queue<TreeNode> queue = new LinkedList<>();
 	    queue.offer(root);
 	    
